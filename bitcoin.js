@@ -4,14 +4,14 @@ const btnEl = document.querySelector('.btn');
 
 const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
-async function GetPrice(){
+async function GetPrice() {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        outputEl.innerText = data.bpi.EUR.rate + 'EUR';
+        outputEl.value = data.bpi.EUR.rate + ' EUR';
         console.log(data.bpi.EUR.rate);
     } catch (error) {
-        outputEl.innerText = 'Not working, try again later!';
+        outputEl.value = 'Not working, try again later!';
     }
 }
 
